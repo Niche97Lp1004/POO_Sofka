@@ -31,7 +31,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="CatLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="CatLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -79,7 +79,7 @@
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               <Component id="GoLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="CatLabel" min="-2" max="-2" attributes="0"/>
+              <Component id="CatLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="PregLabel2" min="-2" pref="103" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -95,12 +95,12 @@
                   <Component id="DLabel" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="NextButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="SellectLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="SellectComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="NextButton" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -121,7 +121,7 @@
         <Property name="text" type="java.lang.String" value="PREGUNTA........"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="CatLabel">
+    <Component class="javax.swing.JLabel" name="CatLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" value="CATEGORIA : 1"/>
       </Properties>

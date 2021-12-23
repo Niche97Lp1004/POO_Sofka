@@ -27,11 +27,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="CatLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="CatLabel5" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="PregLabel19" min="-2" pref="349" max="-2" attributes="0"/>
+                      <Component id="PregLabel24" min="-2" pref="349" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
@@ -43,18 +43,18 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="SellectLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="SellectComboBox17" min="-2" max="-2" attributes="0"/>
+                              <Component id="SellectComboBox22" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="ALabel17" min="-2" pref="163" max="-2" attributes="0"/>
+                                  <Component id="ALabel22" min="-2" pref="163" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="BLabel17" min="-2" pref="174" max="-2" attributes="0"/>
+                                  <Component id="BLabel22" min="-2" pref="174" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="CLabel17" min="-2" pref="163" max="-2" attributes="0"/>
+                                  <Component id="CLabel22" min="-2" pref="163" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="DLabel17" max="32767" attributes="0"/>
+                                  <Component id="DLabel22" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -64,7 +64,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="NextButton17" min="-2" max="-2" attributes="0"/>
+              <Component id="NextButton22" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -73,26 +73,26 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-              <Component id="CatLabel4" min="-2" max="-2" attributes="0"/>
+              <Component id="CatLabel5" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="PregLabel19" min="-2" pref="103" max="-2" attributes="0"/>
+              <Component id="PregLabel24" min="-2" pref="103" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="RespLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="BLabel17" alignment="0" max="32767" attributes="0"/>
-                  <Component id="ALabel17" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="BLabel22" alignment="0" max="32767" attributes="0"/>
+                  <Component id="ALabel22" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="CLabel17" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="DLabel17" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="CLabel22" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="DLabel22" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="NextButton17" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="NextButton22" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="SellectLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="SellectComboBox17" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="SellectComboBox22" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -100,42 +100,27 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="PregLabel19">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="PREGUNTA........"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="CatLabel4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="CATEGORIA : 4"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="RespLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="RESPUESTAS:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="ALabel17">
+    <Component class="javax.swing.JLabel" name="ALabel22">
       <Properties>
         <Property name="text" type="java.lang.String" value="A."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="BLabel17">
+    <Component class="javax.swing.JLabel" name="BLabel22">
       <Properties>
         <Property name="text" type="java.lang.String" value="B."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="CLabel17">
+    <Component class="javax.swing.JLabel" name="CLabel22">
       <Properties>
         <Property name="text" type="java.lang.String" value="C."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="DLabel17">
+    <Component class="javax.swing.JLabel" name="DLabel22">
       <Properties>
         <Property name="text" type="java.lang.String" value="D."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="NextButton17">
+    <Component class="javax.swing.JButton" name="NextButton22">
       <Properties>
         <Property name="text" type="java.lang.String" value="SIGUIENTE"/>
       </Properties>
@@ -148,7 +133,7 @@
         <Property name="text" type="java.lang.String" value="Seleccion:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="SellectComboBox17">
+    <Component class="javax.swing.JComboBox" name="SellectComboBox22">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -162,6 +147,21 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="PregLabel24">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="PREGUNTA........"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="CatLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CATEGORIA : 5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="RespLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="RESPUESTAS:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

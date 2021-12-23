@@ -35,7 +35,7 @@ public class Preg13 extends javax.swing.JFrame {
         SellectLabel = new javax.swing.JLabel();
         SellectComboBox12 = new javax.swing.JComboBox<>();
         PregLabel14 = new javax.swing.JLabel();
-        CatLabel2 = new javax.swing.JLabel();
+        CatLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,7 +58,7 @@ public class Preg13 extends javax.swing.JFrame {
 
         PregLabel14.setText("PREGUNTA........");
 
-        CatLabel2.setText("CATEGORIA : 3");
+        CatLabel3.setText("CATEGORIA : 3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,7 +68,7 @@ public class Preg13 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(CatLabel2))
+                        .addComponent(CatLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(PregLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -101,7 +101,7 @@ public class Preg13 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(CatLabel2)
+                .addComponent(CatLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PregLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -164,7 +164,7 @@ public class Preg13 extends javax.swing.JFrame {
     private javax.swing.JLabel ALabel12;
     private javax.swing.JLabel BLabel12;
     private javax.swing.JLabel CLabel12;
-    private javax.swing.JLabel CatLabel2;
+    private javax.swing.JLabel CatLabel3;
     private javax.swing.JLabel DLabel12;
     private javax.swing.JButton NextButton12;
     private javax.swing.JLabel PregLabel14;

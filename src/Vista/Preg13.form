@@ -27,7 +27,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="CatLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="CatLabel3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -73,7 +73,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-              <Component id="CatLabel2" min="-2" max="-2" attributes="0"/>
+              <Component id="CatLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="PregLabel14" min="-2" pref="103" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -158,7 +158,7 @@
         <Property name="text" type="java.lang.String" value="PREGUNTA........"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="CatLabel2">
+    <Component class="javax.swing.JLabel" name="CatLabel3">
       <Properties>
         <Property name="text" type="java.lang.String" value="CATEGORIA : 3"/>
       </Properties>

@@ -31,7 +31,7 @@ public class Preg4 extends javax.swing.JFrame {
         SellectLabel = new javax.swing.JLabel();
         SellectComboBox3 = new javax.swing.JComboBox<>();
         PregLabel5 = new javax.swing.JLabel();
-        CatLabel = new javax.swing.JLabel();
+        CatLabel1 = new javax.swing.JLabel();
         RespLabel = new javax.swing.JLabel();
         ALabel3 = new javax.swing.JLabel();
         BLabel3 = new javax.swing.JLabel();
@@ -50,7 +50,7 @@ public class Preg4 extends javax.swing.JFrame {
 
         PregLabel5.setText("PREGUNTA........");
 
-        CatLabel.setText("CATEGORIA : 1");
+        CatLabel1.setText("CATEGORIA : 1");
 
         RespLabel.setText("RESPUESTAS:");
 
@@ -68,7 +68,7 @@ public class Preg4 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(CatLabel))
+                        .addComponent(CatLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(PregLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -101,7 +101,7 @@ public class Preg4 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(CatLabel)
+                .addComponent(CatLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PregLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -164,7 +164,7 @@ public class Preg4 extends javax.swing.JFrame {
     private javax.swing.JLabel ALabel3;
     private javax.swing.JLabel BLabel3;
     private javax.swing.JLabel CLabel3;
-    private javax.swing.JLabel CatLabel;
+    private javax.swing.JLabel CatLabel1;
     private javax.swing.JLabel DLabel3;
     private javax.swing.JButton NextButton3;
     private javax.swing.JLabel PregLabel5;
