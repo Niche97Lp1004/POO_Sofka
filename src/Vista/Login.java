@@ -83,6 +83,11 @@ public class Login extends javax.swing.JFrame {
 
         BackButton.setBackground(new java.awt.Color(255, 51, 51));
         BackButton.setText("ATRAS");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -196,6 +201,12 @@ public class Login extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_LOGButtonActionPerformed
+
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+        Inicio acc = new Inicio(); 
+        dispose();
+        acc.setVisible(true);
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     /**
      * @param args the command line arguments
