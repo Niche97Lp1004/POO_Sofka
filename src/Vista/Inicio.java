@@ -66,9 +66,19 @@ public class Inicio extends javax.swing.JFrame {
 
         AdmButton.setBackground(new java.awt.Color(255, 255, 102));
         AdmButton.setText("Administrador");
+        AdmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdmButtonActionPerformed(evt);
+            }
+        });
 
         JugButton.setBackground(new java.awt.Color(51, 102, 255));
         JugButton.setText("Jugador");
+        JugButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JugButtonActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         jLabel1.setText("EJERCICIO DE PREGUNTAS Y RESPUESTAS - SOFKA");
@@ -79,6 +89,11 @@ public class Inicio extends javax.swing.JFrame {
         ExitButton.setBackground(new java.awt.Color(255, 51, 51));
         ExitButton.setText("Salir");
         ExitButton.setToolTipText("");
+        ExitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,6 +137,22 @@ public class Inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AdmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdmButtonActionPerformed
+        Login acc = new Login();
+        dispose();
+        acc.setVisible(true);
+    }//GEN-LAST:event_AdmButtonActionPerformed
+
+    private void JugButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JugButtonActionPerformed
+        DatosJug accsele = new  DatosJug();
+        dispose();
+        accsele.setVisible(true);
+    }//GEN-LAST:event_JugButtonActionPerformed
+
+    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+      System.exit(0);
+    }//GEN-LAST:event_ExitButtonActionPerformed
 
     /**
      * @param args the command line arguments

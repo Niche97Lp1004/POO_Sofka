@@ -45,17 +45,13 @@
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Component id="SellectComboBox2" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="ALabel2" min="-2" pref="163" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="BLabel2" min="-2" pref="174" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="CLabel2" min="-2" pref="163" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="DLabel2" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="CLabel2" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -84,10 +80,7 @@
                   <Component id="ALabel2" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="CLabel2" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="DLabel2" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-              </Group>
+              <Component id="CLabel2" min="-2" pref="28" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="NextButton2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -117,7 +110,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="PregLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="PREGUNTA........"/>
+        <Property name="text" type="java.lang.String" value="C&#xf3;mo se llaman esos dos puntitos que se escriben en las s&#xed;labas g&#xfc;i y g&#xfc;e."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="CatLabel1">
@@ -132,28 +125,26 @@
     </Component>
     <Component class="javax.swing.JLabel" name="ALabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A."/>
+        <Property name="text" type="java.lang.String" value="A. Tilde"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="BLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="B."/>
+        <Property name="text" type="java.lang.String" value="B. Dieesis"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="CLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="C."/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="DLabel2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="D."/>
+        <Property name="text" type="java.lang.String" value="C. Parentesis"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="NextButton2">
       <Properties>
         <Property name="text" type="java.lang.String" value="SIGUIENTE"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NextButton2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="SellectLabel">
       <Properties>

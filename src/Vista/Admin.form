@@ -75,11 +75,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="CONFIGURACI&#xd3;N USUARIO"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CnfigUserButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="CnfigGameButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="CONFIGURACI&#xd3;N JUEGO"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CnfigGameButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BackButton1">
       <Properties>

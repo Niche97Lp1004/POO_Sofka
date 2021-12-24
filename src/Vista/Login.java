@@ -4,17 +4,32 @@
  */
 package Vista;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import Clases.usuario;
+import Conexion.conexion;
+import javax.swing.JOptionPane;
 /**
  *
  * @author jaira
  */
 public class Login extends javax.swing.JFrame {
+   
 
     /**
      * Creates new form Login
      */
     public Login() {
+       
         initComponents();
+     
     }
 
     /**
@@ -60,6 +75,11 @@ public class Login extends javax.swing.JFrame {
 
         LOGButton.setBackground(new java.awt.Color(0, 153, 255));
         LOGButton.setText("INGRESAR");
+        LOGButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LOGButtonActionPerformed(evt);
+            }
+        });
 
         BackButton.setBackground(new java.awt.Color(255, 51, 51));
         BackButton.setText("ATRAS");
@@ -120,6 +140,62 @@ public class Login extends javax.swing.JFrame {
     private void USERTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_USERTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_USERTextFieldActionPerformed
+
+    private void LOGButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGButtonActionPerformed
+        
+       usuario NU = new usuario();
+  
+        NU.setUsuari(USERTextField.getText());
+        NU.setContraseña(PASSTextField.getText());
+
+        if (NU.getUsuari().isEmpty() || NU.getContraseña().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No se ha ingresado nada", "ERROR", JOptionPane.ERROR_MESSAGE);
+            
+        } else {
+            try {
+
+                Connection con = conexion.getConnection();
+                PreparedStatement pstm = con.prepareStatement("SELECT count(1) AS registros FROM tablausuario");
+                ResultSet reg = pstm.executeQuery();
+                reg.next();
+                reg.getInt("registros");
+                reg.close();
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+
+            String usuario = USERTextField.getText();
+            String contraseña = PASSTextField.getText();
+            try {
+                Connection con = conexion.getConnection();
+                PreparedStatement pstm = con.prepareStatement("SELECT usuario,contraseña FROM tablausuario WHERE Usuario = '" + usuario + "' AND Contraseña = '" + contraseña + "'");
+
+                ResultSet res = pstm.executeQuery();
+
+                while (res.next()) {
+                    usuario = res.getString("usuario");
+                    contraseña = res.getString("contraseña");
+
+                    if (usuario.equals(USERTextField.getText()) && contraseña.equals(PASSTextField.getText())) {
+
+                        Admin accsele = new Admin();
+                        dispose();
+                        accsele.setVisible(true);
+                        res.close();
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "El usuario y/o la contraseña están errados", "ERROR", JOptionPane.ERROR_MESSAGE);
+                        USERTextField.setText("");
+                        PASSTextField.setText("");
+
+                    }
+
+                }
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+    }//GEN-LAST:event_LOGButtonActionPerformed
 
     /**
      * @param args the command line arguments

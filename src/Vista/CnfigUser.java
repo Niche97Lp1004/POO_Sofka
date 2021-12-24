@@ -4,6 +4,20 @@
  */
 package Vista;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import Clases.usuario;
+import Conexion.conexion;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author jaira
@@ -31,21 +45,27 @@ public class CnfigUser extends javax.swing.JFrame {
         EmailLabel = new javax.swing.JLabel();
         UserLabel1 = new javax.swing.JLabel();
         PassLabel1 = new javax.swing.JLabel();
+        DniTextField = new javax.swing.JTextField();
         NameTextField = new javax.swing.JTextField();
-        LastNameTextField = new javax.swing.JTextField();
         EmailTextField = new javax.swing.JTextField();
-        UserTextField1 = new javax.swing.JTextField();
+        UsuarTextField1 = new javax.swing.JTextField();
         PassTextField1 = new javax.swing.JTextField();
         SaveButton1 = new javax.swing.JButton();
         ConfigUserLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        ActualizarButton2 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        BuscarButton3 = new javax.swing.JButton();
+        EliminarButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         NameLabel.setFont(new java.awt.Font("Segoe UI Light", 2, 18)); // NOI18N
-        NameLabel.setText("NOMBRE:");
+        NameLabel.setText("DNI:");
 
         LastNameLabel.setFont(new java.awt.Font("Segoe UI Light", 2, 18)); // NOI18N
-        LastNameLabel.setText("APELLIDO:");
+        LastNameLabel.setText("NOMBRE:");
 
         EmailLabel.setFont(new java.awt.Font("Segoe UI Light", 2, 18)); // NOI18N
         EmailLabel.setText("CORREO:");
@@ -56,58 +76,150 @@ public class CnfigUser extends javax.swing.JFrame {
         PassLabel1.setFont(new java.awt.Font("Segoe UI Light", 2, 18)); // NOI18N
         PassLabel1.setText("CONTRASEÑA:");
 
+        DniTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DniTextFieldActionPerformed(evt);
+            }
+        });
+
+        NameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NameTextFieldActionPerformed(evt);
+            }
+        });
+
         SaveButton1.setBackground(new java.awt.Color(0, 102, 153));
         SaveButton1.setFont(new java.awt.Font("Segoe UI Light", 2, 18)); // NOI18N
         SaveButton1.setText("GUARDAR");
+        SaveButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveButton1ActionPerformed(evt);
+            }
+        });
 
         ConfigUserLabel.setFont(new java.awt.Font("Segoe UI Light", 2, 18)); // NOI18N
         ConfigUserLabel.setText("CONFIGURACION USUARIO");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "DNI", "NOMBRE", "CORREO", "USUARIO", "CONTRASEA"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        ActualizarButton2.setBackground(new java.awt.Color(0, 102, 153));
+        ActualizarButton2.setFont(new java.awt.Font("Segoe UI Light", 2, 18)); // NOI18N
+        ActualizarButton2.setText("ACTUALIZAR");
+        ActualizarButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarButton2ActionPerformed(evt);
+            }
+        });
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        BuscarButton3.setBackground(new java.awt.Color(0, 102, 153));
+        BuscarButton3.setFont(new java.awt.Font("Segoe UI Light", 2, 18)); // NOI18N
+        BuscarButton3.setText("BUSCAR");
+        BuscarButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarButton3ActionPerformed(evt);
+            }
+        });
+
+        EliminarButton4.setBackground(new java.awt.Color(0, 102, 153));
+        EliminarButton4.setFont(new java.awt.Font("Segoe UI Light", 2, 18)); // NOI18N
+        EliminarButton4.setText("ELIMINAR");
+        EliminarButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SaveButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(UserLabel1)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(PassLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(NameLabel)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(EmailLabel)
-                                                .addComponent(LastNameLabel))))
-                                    .addGap(18, 18, 18)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(PassLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(EmailLabel)
+                                            .addComponent(LastNameLabel))
+                                        .addGap(0, 14, Short.MAX_VALUE))
+                                    .addComponent(NameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(DniTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
                                         .addComponent(NameTextField)
-                                        .addComponent(LastNameTextField)
                                         .addComponent(EmailTextField)
-                                        .addComponent(UserTextField1)
-                                        .addComponent(PassTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(UsuarTextField1)
+                                        .addComponent(PassTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(BuscarButton3)
+                                            .addComponent(SaveButton1))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(ActualizarButton2)
+                                            .addComponent(EliminarButton4)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(UserLabel1)
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(ConfigUserLabel)
-                        .addGap(77, 77, 77))))
+                        .addGap(77, 77, 77))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ConfigUserLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NameLabel)
-                    .addComponent(NameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DniTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LastNameLabel)
-                    .addComponent(LastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EmailLabel)
@@ -115,18 +227,157 @@ public class CnfigUser extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UserLabel1)
-                    .addComponent(UserTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(UsuarTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PassLabel1)
                     .addComponent(PassTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SaveButton1)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SaveButton1)
+                    .addComponent(ActualizarButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BuscarButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EliminarButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void SaveButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButton1ActionPerformed
+        int dni = Integer.parseInt(DniTextField.getText());
+        String nom_eus = NameTextField.getText();
+        String correo = EmailTextField.getText();
+        String usuari = UsuarTextField1.getText();
+        String contraseña = PassTextField1.getText();
+        try {
+            Connection con = conexion.getConnection();
+            PreparedStatement ps = con.prepareStatement("INSERT INTO usuario (id_eus, nom_eus, correo, usuari, contraseña) VALUES (?,?,?,?,?)");
+            ps.setInt(1, dni);
+            ps.setString(2, nom_eus);
+            ps.setString(3, correo);
+            ps.setString(4, usuari);
+            ps.setString(5, contraseña);
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Registro guardado");
+            limpiar();
+            cargartabla();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+    }//GEN-LAST:event_SaveButton1ActionPerformed
+    private void cargartabla() {
+        DefaultTableModel modeloTabla = (DefaultTableModel) jTable1.getModel();
+        modeloTabla.setRowCount(0);
+
+        PreparedStatement ps;
+        ResultSet rs;
+        ResultSetMetaData rsmd;
+        int columnas;
+        try {
+            Connection con = conexion.getConnection();
+            ps = con.prepareStatement("SELECT*FROM usuarios");
+            rs = ps.executeQuery();
+            rsmd = rs.getMetaData();
+            columnas = rsmd.getColumnCount();
+            while (rs.next()) {
+                Object[] fila = new Object[columnas];
+                for (int indice = 0; indice < columnas; indice++) {
+                    fila[indice] = rs.getObject(indice + 1);
+                }
+                modeloTabla.addRow(fila);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+    }
+
+    private void ActualizarButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarButton2ActionPerformed
+       int dni = Integer.parseInt(DniTextField.getText());
+        String nom_eus = NameTextField.getText();
+        String correo = EmailTextField.getText();
+        String usuari = UsuarTextField1.getText();
+        String contraseña = PassTextField1.getText();
+        try {
+            Connection con = conexion.getConnection();
+            PreparedStatement ps = con.prepareStatement("UPDATE usuario SET nom_eus=?, correo=?, usuari=?, contraseña=? WHERE id_eus=?");
+            ps.setInt(1, dni);
+            ps.setString(2, nom_eus);
+            ps.setString(3, correo);
+            ps.setString(4, usuari);
+            ps.setString(5, contraseña);
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Registro actualizado");
+            limpiar();
+            cargartabla();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+    }//GEN-LAST:event_ActualizarButton2ActionPerformed
+    private void limpiar ()
+    {
+         DniTextField.setText("");
+         NameTextField.setText("");
+         EmailTextField.setText("");
+         UsuarTextField1.setText("");
+         PassTextField1.setText("");
+         
+    }
+    private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NameTextFieldActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void BuscarButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarButton3ActionPerformed
+
+    private void EliminarButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarButton4ActionPerformed
+         int dni = Integer.parseInt(DniTextField.getText());
+        try {
+            Connection con = conexion.getConnection();
+            PreparedStatement ps = con.prepareStatement("DELETE FROM usuario WHERE id_eus=?");
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Registro eliminado");
+            limpiar();
+            cargartabla();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+    }//GEN-LAST:event_EliminarButton4ActionPerformed
+
+    private void DniTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DniTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DniTextFieldActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        try {
+            int fila = jTable1.getSelectedRow();
+            int dni = Integer.parseInt(jTable1.getValueAt(fila, 0).toString());
+            PreparedStatement ps;
+            ResultSet rs;
+            Connection con = conexion.getConnection();
+            ps = con.prepareStatement("SELECT*FROM usuarios WHERE id=?");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                DniTextField.setText(String.valueOf(dni));
+                NameTextField.setText("nom_eus");
+                EmailTextField.setText("correo");
+                UsuarTextField1.setText("usuari");
+                PassTextField1.setText("contraseña");
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -164,17 +415,23 @@ public class CnfigUser extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ActualizarButton2;
+    private javax.swing.JButton BuscarButton3;
     private javax.swing.JLabel ConfigUserLabel;
+    private javax.swing.JTextField DniTextField;
+    private javax.swing.JButton EliminarButton4;
     private javax.swing.JLabel EmailLabel;
     private javax.swing.JTextField EmailTextField;
     private javax.swing.JLabel LastNameLabel;
-    private javax.swing.JTextField LastNameTextField;
     private javax.swing.JLabel NameLabel;
     private javax.swing.JTextField NameTextField;
     private javax.swing.JLabel PassLabel1;
     private javax.swing.JTextField PassTextField1;
     private javax.swing.JButton SaveButton1;
     private javax.swing.JLabel UserLabel1;
-    private javax.swing.JTextField UserTextField1;
+    private javax.swing.JTextField UsuarTextField1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

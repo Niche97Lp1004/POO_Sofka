@@ -40,6 +40,11 @@ public class DatosJug extends javax.swing.JFrame {
         NameLabel2.setText("NOMBRE:");
 
         StartButton1.setText("INICIAR");
+        StartButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,6 +81,13 @@ public class DatosJug extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void StartButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButton1ActionPerformed
+        Preg1 accsele = new Preg1();
+        dispose();
+        accsele.setVisible(true);
+        
+    }//GEN-LAST:event_StartButton1ActionPerformed
 
     /**
      * @param args the command line arguments

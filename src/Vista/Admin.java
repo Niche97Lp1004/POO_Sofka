@@ -37,8 +37,18 @@ public class Admin extends javax.swing.JFrame {
         ModLabel1.setText("MODO ADMINISTRADOR");
 
         CnfigUserButton.setText("CONFIGURACIÓN USUARIO");
+        CnfigUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CnfigUserButtonActionPerformed(evt);
+            }
+        });
 
         CnfigGameButton.setText("CONFIGURACIÓN JUEGO");
+        CnfigGameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CnfigGameButtonActionPerformed(evt);
+            }
+        });
 
         BackButton1.setBackground(new java.awt.Color(255, 51, 51));
         BackButton1.setText("ATRAS");
@@ -79,6 +89,18 @@ public class Admin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CnfigUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CnfigUserButtonActionPerformed
+        CnfigUser acc = new CnfigUser();
+        dispose();
+        acc.setVisible(true);
+    }//GEN-LAST:event_CnfigUserButtonActionPerformed
+
+    private void CnfigGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CnfigGameButtonActionPerformed
+        CnfigPreg acc = new CnfigPreg();
+        dispose();
+        acc.setVisible(true);
+    }//GEN-LAST:event_CnfigGameButtonActionPerformed
 
     /**
      * @param args the command line arguments

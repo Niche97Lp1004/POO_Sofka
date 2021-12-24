@@ -64,6 +64,11 @@ public class CnfigGame extends javax.swing.JFrame {
 
         BackButton2.setBackground(new java.awt.Color(255, 51, 51));
         BackButton2.setText("ATRAS");
+        BackButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,6 +128,10 @@ public class CnfigGame extends javax.swing.JFrame {
     private void CatComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CatComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CatComboBoxActionPerformed
+
+    private void BackButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BackButton2ActionPerformed
 
     /**
      * @param args the command line arguments

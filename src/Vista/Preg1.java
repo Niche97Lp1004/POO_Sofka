@@ -33,7 +33,6 @@ public class Preg1 extends javax.swing.JFrame {
         ALabel = new javax.swing.JLabel();
         BLabel = new javax.swing.JLabel();
         CLabel = new javax.swing.JLabel();
-        DLabel = new javax.swing.JLabel();
         NextButton = new javax.swing.JButton();
         SellectLabel = new javax.swing.JLabel();
         SellectComboBox = new javax.swing.JComboBox<>();
@@ -43,21 +42,24 @@ public class Preg1 extends javax.swing.JFrame {
         GoLabel.setFont(new java.awt.Font("Segoe UI Light", 2, 18)); // NOI18N
         GoLabel.setText("PERFECTO ! INICIEMOS :");
 
-        PregLabel2.setText("PREGUNTA........");
+        PregLabel2.setText("¿Quién ganó el último Nobel de Matemáticas?");
 
         CatLabel1.setText("CATEGORIA : 1");
 
         RespLabel.setText("RESPUESTAS:");
 
-        ALabel.setText("A.");
+        ALabel.setText("A. Alessio");
 
-        BLabel.setText("B.");
+        BLabel.setText("B.No existe");
 
-        CLabel.setText("C.");
-
-        DLabel.setText("D.");
+        CLabel.setText("C. Peter");
 
         NextButton.setText("SIGUIENTE");
+        NextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NextButtonActionPerformed(evt);
+            }
+        });
 
         SellectLabel.setFont(new java.awt.Font("Segoe UI Light", 2, 14)); // NOI18N
         SellectLabel.setText("Seleccion:");
@@ -89,15 +91,12 @@ public class Preg1 extends javax.swing.JFrame {
                                 .addComponent(SellectLabel)
                                 .addGap(26, 26, 26)
                                 .addComponent(SellectComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(ALabel, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(BLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(CLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(DLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                .addComponent(CLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(31, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -120,9 +119,7 @@ public class Preg1 extends javax.swing.JFrame {
                     .addComponent(BLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ALabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(CLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -134,6 +131,12 @@ public class Preg1 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButtonActionPerformed
+        Preg2 accsele = new Preg2();
+        dispose();
+        accsele.setVisible(true);
+    }//GEN-LAST:event_NextButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,7 +178,6 @@ public class Preg1 extends javax.swing.JFrame {
     private javax.swing.JLabel BLabel;
     private javax.swing.JLabel CLabel;
     private javax.swing.JLabel CatLabel1;
-    private javax.swing.JLabel DLabel;
     private javax.swing.JLabel GoLabel;
     private javax.swing.JButton NextButton;
     private javax.swing.JLabel PregLabel2;
